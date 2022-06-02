@@ -1,0 +1,57 @@
+
+#mapChart{
+  width: 510px;
+  height: 430px;
+  padding: 1.5%;
+  padding-left: 2%;
+  box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  transition-duration: 0.5s;
+  border: 5px solid rgb(128, 128, 128);
+  }
+
+#mapChart:hover{
+  width: 513px;
+  height: 435px;
+  padding-left: 2.5%;
+}
+
+#mapChart svg circle {
+  opacity: .5;
+  stroke: white;
+}
+#mapChart svg circle:hover {
+  fill: red;
+  stroke: #333;
+}
+#mapChart svg text {
+  pointer-events: none;
+}
+.municipality {
+  /* 지도 색 */
+  fill: #bfd8e0;
+  stroke: #fff;
+}
+.municipality-label {
+  fill: rgb(95, 95, 95);
+  font-size: 12px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+#mapChart svg text {
+  color: #333;
+  font-size: 10px;
+  text-anchor: middle;
+}
+#mapChart svg #places text {
+  color: #777;
+  font: 10px sans-serif;
+  text-anchor: start;
+}
+#title {
+    font-family: sans-serif;
+}
+#title p {
+    font-size: 10pt;
+}

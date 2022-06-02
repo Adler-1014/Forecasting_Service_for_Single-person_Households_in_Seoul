@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Single-Person Household</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1> <img src="./media/person.png" alt="person-img" width="2%">
+        <span class="txt">1인 가구 어디가 좋을까?</span>
+        <img src="./media/house.png" alt="house-img" width="3%">
+    </h1>
+
+<div class="section">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- 꺾은선 그래프 영역 -->
+            <div class="col-lg-3 col-md-3 " id="line-container">
+                <svg id="lineSvg">
+                    <text x="30" y="40" font-size="1.4em" fill="#d34e4e">서울시 1인 가구 추이</text>
+                </svg>
+                <span class="txt4">1인 가구는 <span class="red">매년</span> 증가하고 있습니다.</span>
+                <span class="txt5">1인 가구의 주거 선택 시 고려할 수 있는 <span class="red">사회 인프라 시설</span>에 대한 차트를 한 눈에 확인할 수 있는 대시보드입니다.</span>
+                <span class="txt6"> by 강민정 강희지 서인영 이정환 장은수</span>
+            </div>
+
+            <!-- 1인가구 성별/연령별 파이차트영역 -->
+            <div class="col-lg-3 col-md-3" id="piechart" style="position:relative;">
+                <button class="btn" id="#genderBtn" onclick="gendershow()" style="position:absolute; margin-top:360px; margin-left:35px; ">성별</button>
+                <button class="btn" id="#ageBtn" onclick="ageshow()" style="position:absolute; margin-top:360px; margin-left:100px;">연령별</button>
+            
+                <div class="gender-container">
+                    <svg id="genderGraph">
+                        <text x="75" y="35" font-size="1.4em" fill="#d34e4e" >서울시 1인 가구 남녀비율</text>
+                        <text x="270" y="80" font-size="0.8em" fill="#d34e4e">단위(%)</text>
+                    </svg>
+                </div>
+            
+                <div class="age-container">
+                    <svg id="ageGraph">
+                        <text x="60" y="35" font-size="1.4em" fill="#d34e4e">서울시 1인 가구 연령별 비율</text>
+                        <text x="270" y="80" font-size="0.8em" fill="#d34e4e">단위(%)</text>
+                    </svg>
+                </div>
+            </div>
+
+                <!-- 지도 영역 -->
+            <div class="col-lg-3 col-md-5" id="container-map">
+                <svg id="mapChart">
+                    <text x="30" y="30" font-size="1.4em" fill="#d34e4e">서울시 병원 지도</text>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+    <!-- 막대 그래프 & 표 영역  -->
+        <div class="row" id="bar-container">
+
+            <!-- 우체국 표 영역-->
+            <div class="col-lg-3 col-md-3 col-sm-6" id="container-post">
+                <div id="page-wrap"> <span class="txt2">구별 우체국 수 TOP7</span><br><span class="txt3">단위(개)</span></div>
+            </div>
+
+            <!-- 영화 막대그래프 영역 -->
+            <div class="col-lg-3 col-md-3 col-sm-6" id="container-movie">
+                <svg id="movieGraph">
+                    <text x="65" y="25" font-size="1.2em" fill="#d34e4e">구별 영화관 비율 TOP5</text>
+                    <text x="190" y="50" font-size="0.8em" fill="#d34e4e">단위(좌석수/인구수)</text>
+                </svg>
+            </div>
+            <!-- CCTV 막대그래프 영역 -->
+            <div class="col-lg-3 col-md-3 col-sm-6" id="container-cctv">
+                <svg id="cctvGraph">
+                    <text x="65" y="25" font-size="1.2em" fill="#d34e4e">구별 CCTV 개수 TOP5</text>
+                    <text x="250" y="50" font-size="0.8em" fill="#d34e4e">단위(개)</text>
+                </svg>
+            </div>
+            <!-- 공원 막대그래프 영역 -->
+            <div class="col-lg-3 col-md-3 col-sm-6" id="container-park">
+                <svg id="parkGraph">
+                    <text x="65" y="25" font-size="1.2em" fill="#d34e4e">구별 공원 개수 TOP5</text>
+                    <text x="170" y="50" font-size="0.8em" fill="#d34e4e">단위(구면적/공원면적)</text>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./mapstyle.css">
+    <script src="./JS/barChart.js"></script>
+    <script src="./JS/map.js"></script>
+    <script src="./JS/post.js"></script>
+    <script src="./JS/gender.js"></script>
+    <script src="./JS/age.js"></script>
+    <script src="./JS/line.js"></script>
+    <script>
+        // 파이차트
+        $('.age-container').hide();
+        $('.gender-container').show();
+        function gendershow() {
+            $('.age-container').hide();
+            $('.gender-container').show();
+        }
+
+        function ageshow() {
+            $('.age-container').show();
+            $('.gender-container').hide();
+        }
+    </script>
+
+</body>
+
+</html>

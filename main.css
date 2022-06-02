@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background: #b5b5b5;   
+}
+h1{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+.section{
+    margin-left: 5%;
+}
+.container-fluid{
+    margin-left: 2%;
+    text-align: center;
+}
+.row{
+    margin: auto;
+    margin-bottom: 1%;
+}
+.txt{
+    margin-top: 3%;
+    font-family: 'yg-jalnan';
+    color: #fcf9f2;
+    text-shadow:2px 2px 2px #353535;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+
+/* Bar CSS */
+/* 막대그래프 & 표 영역 */
+#container-movie{
+    border: 5px solid rgb(128, 128, 128);
+    width: 330px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    padding-top: 0.5%;
+    margin-left: 1%;
+}
+#container-movie:hover{
+    width: 335px;
+    height: 305px;
+    padding-top: 0.7%;
+}
+#container-cctv{
+    border: 5px solid rgb(128, 128, 128);
+    width: 330px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    padding-top: 0.5%;
+    margin-left: 1%;
+}
+#container-cctv:hover{
+    width: 335px;
+    height: 305px;
+    padding-top: 0.7%;
+}
+#container-park{
+    border: 5px solid rgb(128, 128, 128);
+    width: 330px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    padding-top: 0.5%;
+    margin-left: 1%;
+}
+#container-park:hover{
+    width: 335px;
+    height: 305px;
+    padding-top: 0.7%;
+}
+
+text {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+#bar-container svg{
+    width: 300px;
+    height: 280px;
+    background-size: 290px;
+    border-radius: 10px;
+}
+/* 막대그래프 배경, 테두리  */
+#movieGraph {
+    background-image: url(./media/pop.png);
+}
+#cctvGraph {
+    background-image: url(./media/cctv.png);
+}
+
+#parkGraph{
+    background-image: url(./media/tree.png);
+}
+.toolTip {
+    position: absolute;
+    border: 0 none;
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* 막대그래프 색 */
+.mobar {
+    fill: orange;
+}
+.ccbar{
+    fill: #5abae6;
+}
+.pabar{
+    fill: #9dbb19;
+
+}
+
+/* 막대그래프 수치 */
+.barNum {
+    font-size: 0.8em;
+    text-anchor: middle;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: orange;
+}
+
+.axis text {
+    font-size: 1em;
+    fill: #d34e4e;
+}
+
+.axis_x line {
+    fill: none;
+    stroke: white;
+}
+
+.barName {
+    font-size: 0.9em;
+    text-anchor: middle;
+}
+
+
+/* Pie CSS */
+
+#genderGraph, #ageGraph {
+    width: 380px;
+    height: 430px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    border: 5px solid rgb(128, 128, 128);
+
+}
+
+#genderGraph:hover, #ageGraph:hover{
+    width: 385px;
+    height: 435px;
+}
+.pieToolTip {
+    position: absolute;
+    border: 0 none;
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    padding: 5px;
+    width: 100px;
+    height: 70px;
+    text-align: center;
+    font-size: 15px;
+}
+.btn {
+    /*background-color: white;*/
+    border-radius: 15px;
+    border: 2px solid rgb(128, 128, 128);
+}
+.btn:hover {
+    background-color: rgb(128, 128, 128, 0.5);
+    font-weight: bold;
+    font-size:medium;
+}
+.btn:visited{
+    border:0 none;
+}
+span {
+    margin: 0px;
+}
+.activeBtn {
+    background-color: rgb(128, 128, 128, 0.5);
+}
+/* Line CSS */
+
+#line-container{
+    width: 440px;
+    height: 430px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;    
+    transition-duration: 0.5s;
+    border: 5px solid rgb(128, 128, 128);
+}
+#line-container:hover{
+    width: 445px;
+    height: 435px;
+}
+
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5px;
+}
+
+#lineSvg{
+    /* 실제 그래프 그려지는 영역 - 여기 수정해야함 */
+    width: 420px;
+    height: 250px;
+    transition-duration: 0.5s;
+}
+
+
+/* Post Css */
+
+#container-post{
+    font-size: 0.9em;
+    width: 330px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    padding-top: 30px;
+    border: 5px solid rgb(128, 128, 128);
+    border-radius: 20px;
+}
+#container-post:hover{
+    width: 335px;
+    height: 305px;
+}
+
+table {
+    width: 100%;
+    margin-top: 2%;
+}
+
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    cursor: s-resize;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+}
+th:hover{
+    background: #d34e4e;
+    font-size: 1.2em;
+}
+
+td,
+th {
+    padding: 2px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th.des:after {
+    content: "\21E9";
+}
+
+th.aes:after {
+    content: "\21E7";
+}
+
+.txt2, .txt3, .txt4, .txt5{
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+.txt2{
+    font-size: 1.35em;
+    color:#d34e4e;
+}
+.txt3{
+    font-size: 0.9em;
+    color:#d34e4e;
+    float: right;
+    margin-bottom: 1%;
+}
+.txt4{
+    font-size: 1.35em;
+    color:#333333;
+}
+.txt5{
+    margin-top: 15px;
+    font-size: 1em;
+    color:#333333;
+    float: right;
+}
+.txt6{
+    margin-top: 40px;
+    font-size: 0.8em;
+    color:#5f5f5f;
+    float: right;
+}
+.red{
+    color:#d34e4e;
+    font-weight: bold;
+}
